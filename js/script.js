@@ -38,10 +38,9 @@ for(let i = 0; i < rpsOptions.length; i++) {
             playAgainPopUp.style.cssText = ` display: inline;`; 
             imgLose.style.cssText = "display: inline;";
             imgWin.style.cssText = "display: none;";
-            rpsContainer.style.cssText = "display: none;"
+            rpsContainer.style.cssText = "display: none;";
         }
-    })
-};
+    })};
 
 nameButton.addEventListener("click", event => {
     event.preventDefault();
@@ -56,8 +55,8 @@ playAgainButton.addEventListener("click", playAgainEvent => {
     playerScoreParagraph.innerText = `Player Score: ${playerScore}`;
     computerScoreParagraph.innerText = `Computer Score: ${computerScore}`;
     winnerParagraph.innerText = "";
-    playAgainPopUp.style.cssText = ` display: none;`
-    rpsContainer.style.cssText = "display: flex;"
+    playAgainPopUp.style.cssText = ` display: none;`;
+    rpsContainer.style.cssText = "display: flex;";
 });
     
 
