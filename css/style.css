@@ -75,14 +75,23 @@ form button:hover {
 
 .paragraphContainer {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: space-around;
-    width: 50%;
+    width: 80%;
     position: fixed;
-    bottom: 50px;
-    left: 25%;
+    bottom: 20px;
+    left: 10%; 
     font-size: 20px;
 }
+
+#computerChoiceParagraph {
+    color: red;
+}
+
+#computerScore {
+    color: red;
+}
+
 
 .popUpWindow {
     position: fixed;

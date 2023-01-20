@@ -7,6 +7,7 @@ const nameButton = document.querySelector("#nameButton");
 const winnerParagraph = document.querySelector("#winnerParagraph");
 const playerScoreParagraph = document.querySelector("#playerScore");
 const computerScoreParagraph = document.querySelector("#computerScore");
+const computerChoiceParagraph = document.querySelector("#computerChoiceParagraph")
 const playAgainButton = document.querySelector("#playAgainButton");
 const playAgainPopUp = document.querySelector("#popUpWindow");
 const imgLose = document.querySelector("#imgLose");
@@ -20,6 +21,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 const rpsOptions = [rockOption, paperOption, scissorOption];
+const rpsOptionsString = ["Rock", "Paper", "Scissor"];
 
 for(let i = 0; i < rpsOptions.length; i++) {
     rpsOptions[i].addEventListener("click", () => {
@@ -27,6 +29,7 @@ for(let i = 0; i < rpsOptions.length; i++) {
         playerChoice = i;
         computerChoice = Math.floor(Math.random()*3);
         play(rpsOptions[playerChoice], rpsOptions[computerChoice]);
+        computerChoiceParagraph.innerText = `Computer chose: ${rpsOptionsString[computerChoice]}`;
 
         if(playerScore === 3) {
             playAgainPopUp.style.cssText = ` display: inline;`;
@@ -40,7 +43,8 @@ for(let i = 0; i < rpsOptions.length; i++) {
             imgWin.style.cssText = "display: none;";
             rpsContainer.style.cssText = "display: none;";
         }
-    })};
+    })
+};
 
 nameButton.addEventListener("click", event => {
     event.preventDefault();
@@ -55,8 +59,9 @@ playAgainButton.addEventListener("click", playAgainEvent => {
     playerScoreParagraph.innerText = `Player Score: ${playerScore}`;
     computerScoreParagraph.innerText = `Computer Score: ${computerScore}`;
     winnerParagraph.innerText = "";
-    playAgainPopUp.style.cssText = ` display: none;`;
-    rpsContainer.style.cssText = "display: flex;";
+    computerChoiceParagraph.innerText = "";
+    playAgainPopUp.style.cssText = ` display: none;`
+    rpsContainer.style.cssText = "display: flex;"
 });
     
 
@@ -78,7 +83,6 @@ function play(playerChoice, computerChoice) {
         computerScoreParagraph.innerText = `Computer Score: ${computerScore}`;
         result = "You lose!";
      }
-
 
     if(playerScore === 3) {
         if(nameInputValue === undefined || nameInputValue === ""){
