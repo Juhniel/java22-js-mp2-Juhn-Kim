@@ -6,6 +6,7 @@ const scissorOption  = document.querySelector("#scissorOption");
 const nameButton = document.querySelector("#nameButton");
 const winnerParagraph = document.querySelector("#winnerParagraph");
 const playerScoreParagraph = document.querySelector("#playerScore");
+const playerChoiceParagraph = document.querySelector("#playerChoice");
 const computerScoreParagraph = document.querySelector("#computerScore");
 const computerChoiceParagraph = document.querySelector("#computerChoiceParagraph")
 const playAgainButton = document.querySelector("#playAgainButton");
@@ -30,7 +31,8 @@ for(let i = 0; i < rpsOptions.length; i++) {
         computerChoice = Math.floor(Math.random()*3);
         play(rpsOptions[playerChoice], rpsOptions[computerChoice]);
         computerChoiceParagraph.innerText = `Computer chose: ${rpsOptionsString[computerChoice]}`;
-
+        playerChoiceParagraph.innerText = `Player chose: ${rpsOptionsString[playerChoice]}`;
+        
         if(playerScore === 3) {
             playAgainPopUp.style.cssText = ` display: inline;`;
             imgWin.style.cssText = "display: inline;";
